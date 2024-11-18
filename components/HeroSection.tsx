@@ -56,7 +56,7 @@ const HeroSection = () => {
             Hi, I&#39;m Aakash!
           </h1>
           <p className="text-base mt-2 mb-4 md:text-lg">
-            I am an aspiring Developer & love complex problem-solving.
+            I am an aspiring developer & love complex problem-solving.
           </p>
         </div>
 
@@ -67,10 +67,12 @@ const HeroSection = () => {
             <hr className="w-6 h-1 mx-auto my-4 bg-yellow-900 border-0 rounded"></hr>
           </h1>
           <p className="text-base mt-2 md:text-lg text-center md:text-left mx-auto max-w-3xl">
-            I am a 3rd-year student at UCSB majoring in Data Science, Statistics, and Applied
-            Mathematics. My coursework spans a diverse range of disciplines, including advanced
-            topics in data science, statistical modeling, mathematics, and computer science,
-            providing me with a strong foundation in both analytical and technical skills.
+          I am a 3rd-year student at UCSB majoring in Data Science, Statistics, and Applied Mathematics.
+          My coursework spans a diverse range of disciplines, including computer science, advanced data science, statistical modeling, and mathematics, providing me with a strong foundation in both analytical and technical skills.
+          Through my experiences, I have cultivated a problem-solving mindset and a passion for leveraging technology to address complex real-world challenges.
+          Outside of academics, I am actively involved in campus organizations such as 180 Degrees Consulting and the Investment Advisory Committee, where I have honed my collaboration and communication skills.
+
+
           </p>
         </div>
 
