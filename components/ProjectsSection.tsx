@@ -6,7 +6,7 @@ const projects = [
   {
     name: "Flash Focus AI",
     description:
-      "An AI-powered application that converts notes into flashcards for ADHD users, utilizing spaced repetition to improve memory and focus.",
+      "An AI-powered application that converts notes into flashcards for ADHD users, utilizing spaced repetition to improve memory and focus. Currently in development and in waitlist stage.",
     technologies: ["React", "Python", "OpenAI API", "Tailwind CSS"],
     image: "/flash_focus_ai.png", // Replace with actual image path
     github: "#",
@@ -16,7 +16,7 @@ const projects = [
     name: "OrderBook Engine",
     description:
       "Built a high-performance order matching engine for trading, capable of handling millions of requests per second.",
-    technologies: ["Node.js", "Redis", "MongoDB"],
+    technologies: ["C++"],
     image: "/orderbook_engine.png", // Replace with actual image path
     github: "#",
     link: "#",
@@ -25,7 +25,7 @@ const projects = [
     name: "NBA Arbitrage",
     description:
       "Developed a Python-based arbitrage betting application for NBA games by analyzing player-proposition odds from multiple sportsbooks.",
-    technologies: ["Python", "Pandas", "Sports API"],
+    technologies: ["Python", "Pandas, Selenium", "Excel"],
     image: "/nba_arbitrage.png", // Replace with actual image path
     github: "#",
     link: "#",
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
                 {project.description}
               </p>
               <div className="mb-4">
-                <h2 className="font-semibold text-xl mb-2">Technologies Used:</h2>
+                <h2 className="font-semibold text-xl mb-2">Technologies / Languages Used:</h2>
                 <ul className="list-disc ml-6 text-neutral-600 dark:text-neutral-400">
                   {project.technologies.map((tech, techIdx) => (
                     <li key={techIdx}>{tech}</li>
