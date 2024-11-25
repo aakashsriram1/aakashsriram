@@ -32,22 +32,23 @@ export default function Navbar() {
         >
           <FaGithub size={25} color="black" />
         </a>
-                {/* Light/Dark Mode Button */}
-                {currentTheme === "dark" ? (
-          <button
-            onClick={() => setTheme("light")}
-            className="bg-slate-100 p-2 rounded-xl"
-          >
-            <RiSunLine size={25} color="black" />
-          </button>
-        ) : (
-          <button
-            onClick={() => setTheme("dark")}
-            className="bg-slate-100 p-2 rounded-xl"
-          >
-            <RiMoonFill size={25} />
-          </button>
-        )}
+  {/* Light/Dark Mode Button */}
+{currentTheme === "dark" ? (
+  <button
+    onClick={() => setTheme("light")}
+    className="bg-gray-800 text-white p-2 rounded-xl hover:bg-gray-700 transition"
+  >
+    <RiSunLine size={25} />
+  </button>
+) : (
+  <button
+    onClick={() => setTheme("dark")}
+    className="bg-gray-200 text-black p-2 rounded-xl hover:bg-gray-300 transition"
+  >
+    <RiMoonFill size={25} />
+  </button>
+)}
+
       </div>
     </header>
   );

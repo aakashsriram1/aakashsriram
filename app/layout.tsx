@@ -1,28 +1,29 @@
-"use client"
-import "../styles/globals.css"
-import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
-import { ThemeProvider } from "next-themes"
+"use client";
+import "../styles/globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ThemeProvider } from "next-themes";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body className="dark:bg-stone-900">
-        <ThemeProvider enableSystem={true} attribute="class">
+      <body className="dark:bg-stone-900 bg-white">
+        <ThemeProvider
+          enableSystem={true} // Enables system theme
+          attribute="class" // Applies theme as a class to the HTML element
+          defaultTheme="light" // Sets default theme to light
+        >
           <Navbar />
           {children}
           <Footer />
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
+
