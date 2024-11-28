@@ -10,9 +10,7 @@ const experiences = [
     logo: "/clay.png",
     dates: "October 2024 - Present",
     details: [
-      "Developed and maintained a responsive web application using React and Next.js.",
-      "Implemented dynamic credit card reward structures and optimized user experience.",
-      "Performed A/B testing to enhance website performance and user engagement.",
+      "Leading the development of an AI agent to automate financial statements, streamline reconciliations, and simplify auditing processes."
     ],
   },
   {
@@ -21,9 +19,7 @@ const experiences = [
     logo: "/amazon.png",
     dates: "June 2024 - September 2024",
     details: [
-      "Utilized AWS services (S3, Lambda, Redshift) to develop a real-time metrics dashboard.",
-      "Created Python scripts to standardize data templates, saving 5 hours per month.",
-      "Collaborated with developers to optimize processes, achieving 3-sigma accuracy.",
+      "Built a real-time metrics dashboard on AWS Quicksight for the Operational Expense team, leveraging AWS services to reduce team's manual effort."
     ],
   },
   {
@@ -32,9 +28,7 @@ const experiences = [
     logo: "/yourok.png",
     dates: "June 2023 - September 2023",
     details: [
-      "Developed a chatbot web app using React, Flask, and OpenAI API to assist children.",
-      "Integrated SQL databases to enable data persistence and analytics.",
-      "Implemented RESTful APIs for seamless backend communication.",
+      "Contributed to the Generative AI team by developing a chatbot that serves as a virtual therapist for children, helping them understand emotions and providing support."
     ],
   },
   {
@@ -43,8 +37,7 @@ const experiences = [
     logo: "/ucsb.png",
     dates: "May 2023 - Present",
     details: [
-      "Performed financial analysis to optimize conference operations.",
-      "Created reports and dashboards to track key performance indicators.",
+      "Managed hotel query datasets, generated financial reports, and supported operational tasks as a part-time financial analyst.",
     ],
   },
   {
@@ -53,8 +46,7 @@ const experiences = [
     logo: "/springer.png",
     dates: "February 2023 - April 2023",
     details: [
-      "Built ETL pipelines for processing financial data.",
-      "Analyzed large datasets to identify trends and optimize investment strategies.",
+      "Designed ETL pipelines and analyzed large datasets for the Private Equity team to identify trends and optimize investment strategies.",
     ],
   },
 ];
@@ -108,7 +100,7 @@ const HeroSection = () => {
             <p className="mt-4 text-base md:text-lg text-left text-neutral-700 dark:text-neutral-300 leading-relaxed">
               Through my experiences, I have cultivated a problem-solving mindset and a passion for leveraging technology to address complex real-world challenges. Outside of academics, I am actively involved in campus organizations such as 
                180 Degrees Consulting where I provide strategic consulting advice to nonprofits, and the 
-              Investment Advisory Committee where I serve in the Fixed Income sector managing a $270,000 portfolio and developing data-driven strategies to maximize returns.
+              Investment Advisory Committee where I serve in the Fixed Income sector managing a subset of a $270,000 portfolio and developing data-driven strategies to maximize returns.
             </p>
           </div>
         </div>
