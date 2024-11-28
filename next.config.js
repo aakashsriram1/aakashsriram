@@ -1,8 +1,8 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export', 
-  basePath: '', 
-  trailingSlash: true,
-};
+const isProd = process.env.NODE_ENV === 'production';
 
-module.exports = nextConfig;
+module.exports = {
+  assetPrefix: isProd ? '/aakashsriram1.github.io/' : '',
+  images: {
+    unoptimized: true,
+  },
+};
