@@ -56,9 +56,9 @@ const HeroSection = () => {
 
   const toggleDetails = (index: number) => {
     if (openIndices.includes(index)) {
-      setOpenIndices(openIndices.filter((i) => i !== index)); // Close the section
+      setOpenIndices(openIndices.filter((i) => i !== index)); 
     } else {
-      setOpenIndices([...openIndices, index]); // Open the section
+      setOpenIndices([...openIndices, index]);
     }
   };
 
@@ -76,7 +76,7 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* Main Text Section */}
+        {/* Main Section */}
         <div className="text-center mt-6">
           <h1 className="text-3xl font-bold md:text-6xl">
             Hi, I&#39;m Aakash!
@@ -94,7 +94,7 @@ const HeroSection = () => {
           </h1>
           <div className="mx-auto max-w-3xl px-4 md:px-6">
             <p className="text-base md:text-lg text-left text-neutral-700 dark:text-neutral-300 leading-relaxed">
-              I am a 3rd-year student at UCSB majoring in Data Science, Statistics, and Applied Mathematics.
+              I am a 3rd-year student at the University of California, Santa Barbara.
               My coursework spans a diverse range of disciplines, including computer science, advanced data science, statistical modeling, and mathematics, providing me with a strong foundation in both analytical and technical skills.
             </p>
             <p className="mt-4 text-base md:text-lg text-left text-neutral-700 dark:text-neutral-300 leading-relaxed">
@@ -140,7 +140,7 @@ const HeroSection = () => {
                     </button>
                   </div>
                 </div>
-                {/* Details Section with Smooth Animation */}
+                {/* Details Section*/}
                 <div
                   className={`overflow-hidden transition-all duration-500 ease-in-out ${
                     openIndices.includes(index)
