@@ -1,43 +1,129 @@
-"use client"; // this is a client component
-import React from "react";
+"use client";
 
-const skills = [
-  { skill: "C++" },
-  { skill: "HTML/CSS" },
-  { skill: "Java" },
-  { skill: "JavaScript" },
-  { skill: "Python" },
-  { skill: "R" },
-  { skill: "SQL" },
-  { skill: "TypeScript" },
-  { skill: "AWS" },
-  { skill: "Django" },
-  { skill: "Docker" },
-  { skill: "Flask" },
-  { skill: "Git" },
-  { skill: "Node.js" },
-  { skill: "NumPy" },
-  { skill: "MongoDB" },
-  { skill: "Pandas" },
-  { skill: "React.js" },
-  { skill: "Redis" },
+const skillGroups = [
+  {
+    title: "Languages",
+    skills: [
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "SQL",
+      "R",
+      "Java",
+      "C++",
+      "HTML",
+      "CSS",
+    ],
+  },
+  {
+    title: "Frontend",
+    skills: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Tailwind CSS",
+      "Framer Motion",
+      "shadcn/ui",
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      "Node.js",
+      "FastAPI",
+      "NestJS",
+      "Express",
+      "REST APIs",
+      "GraphQL",
+      "Auth",
+      "WebSockets",
+    ],
+  },
+  {
+    title: "Databases",
+    skills: [
+      "Postgres",
+      "Redis",
+      "MongoDB",
+      "Supabase",
+      "Firebase",
+      "Prisma",
+      "SQLAlchemy",
+      "Vector DBs",
+    ],
+  },
+  {
+    title: "AI / ML",
+    skills: [
+      "PyTorch",
+      "TensorFlow",
+      "scikit-learn",
+      "LLMs",
+      "RAG",
+      "MCP",
+      "Agents",
+      "Prompt Engineering",
+      "Model Evaluation",
+    ],
+  },
+  {
+    title: "Data / Analytics",
+    skills: [
+      "Pandas",
+      "NumPy",
+      "Spark",
+      "Airflow",
+      "ETL Pipelines",
+      "Data Modeling",
+      "Statistics",
+      "Experimentation",
+    ],
+  },
+  {
+    title: "Infrastructure",
+    skills: [
+      "Docker",
+      "AWS",
+      "GCP",
+      "Azure",
+      "Vercel",
+      "CI/CD",
+      "Linux",
+      "GitHub Actions",
+    ],
+  },
+  {
+    title: "Tools",
+    skills: [
+      "Git",
+      "GitHub",
+      "Postman",
+      "Figma",
+      "Jupyter",
+      "VS Code",
+      "Cursor",
+      "Claude Code",
+    ],
+  },
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-4"> {/* Reduced from py-6 to py-4 */}
-      <h1 className="my-4 text-center font-bold text-4xl"> {/* Reduced my-6 to my-4 */}
-        My Skills
-        <hr className="w-6 h-1 mx-auto my-4 bg-yellow-900 border-0 rounded"></hr>
-      </h1>
-      <div className="flex flex-wrap justify-center gap-2 mx-auto max-w-4xl"> {/* Reduced gap-4 to gap-2 */}
-        {skills.map((item, idx) => (
-          <div
-            key={idx}
-            className="bg-gray-200 px-4 py-2 rounded-lg shadow-md text-gray-700 font-semibold"
-          >
-            {item.skill}
-          </div>
+    <section id="skills" className="section-shell">
+      <div className="section-heading">
+        <p className="eyebrow">Skills</p>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {skillGroups.map((group) => (
+          <article className="stack-card" key={group.title}>
+            <h3>{group.title}</h3>
+            <ul>
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </article>
         ))}
       </div>
     </section>

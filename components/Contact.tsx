@@ -1,49 +1,44 @@
-"use client"; // This is a client component
-import React from "react";
+"use client";
+
+import { BsArrowRight, BsGithub, BsLinkedin } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-10">
-      <h1 className="text-center font-bold text-4xl">
-        Reach Out!
-        <hr className="w-6 h-1 mx-auto my-4 bg-yellow-900 border-0 rounded" />
-      </h1>
-      <div className="flex flex-col items-center space-y-6 text-xl mt-6">
-        {/* Personal Email */}
-        <a
-          href="mailto:aakashgsriram@gmail.com"
-          className="text-blue-600 hover:underline hover:scale-110 transition-transform"
-        >
-          Personal Email
-        </a>
+    <section id="contact" className="section-shell pb-24">
+      <div className="contact-panel">
+        <div>
+          <p className="eyebrow">Contact</p>
+          <h2>Have an AI product, data system, or engineering role in mind?</h2>
+          <p>
+            I am always open to ambitious teams, thoughtful collaborators, and
+            work where strong engineering makes the product feel simpler.
+          </p>
+        </div>
 
-        {/* School Email */}
-        <a
-          href="mailto:aakashsriram@ucsb.edu"
-          className="text-blue-600 hover:underline hover:scale-110 transition-transform"
-        >
-          School Email
-        </a>
-
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/in/aakashsriram"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline hover:scale-110 transition-transform"
-        >
-          LinkedIn: <span className="font-semibold">in/aakashsriram</span>
-        </a>
-
-        {/* GitHub */}
-        <a
-          href="https://github.com/aakashsriram1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 hover:underline hover:scale-110 transition-transform"
-        >
-          GitHub: <span className="font-semibold">aakashsriram1</span>
-        </a>
+        <div className="contact-actions">
+          <a href="mailto:aakashsriram4@gmail.com" className="button-primary">
+            Email me
+            <BsArrowRight aria-hidden="true" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aakashsriram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Aakash Sriram LinkedIn"
+          >
+            <BsLinkedin aria-hidden="true" />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/aakashsriram1"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Aakash Sriram GitHub"
+          >
+            <BsGithub aria-hidden="true" />
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
   );

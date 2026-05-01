@@ -12,11 +12,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="dark:bg-stone-900 bg-white">
+      <body className="bg-[#f6f0e7] text-stone-950 antialiased">
         <ThemeProvider
-          enableSystem={true} // Enables system theme
-          attribute="class" // Applies theme as a class to the HTML element
-          defaultTheme="light" // Sets default theme to light
+          enableSystem={false}
+          attribute="class"
+          defaultTheme="light"
         >
           <Navbar />
           {children}
@@ -26,4 +26,3 @@ export default function RootLayout({
     </html>
   );
 }
-

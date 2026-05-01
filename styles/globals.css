@@ -1,3 +1,316 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(226, 173, 126, 0.22), transparent 28rem),
+      linear-gradient(180deg, #f8f2e9 0%, #f4eadf 46%, #efe6dc 100%);
+  }
+
+  a,
+  button {
+    outline-color: #9f5d45;
+    outline-offset: 4px;
+  }
+}
+
+@keyframes terminalBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .section-heading {
+    @apply mb-8 max-w-3xl;
+  }
+
+  .section-heading h2 {
+    @apply mt-3 text-3xl font-semibold leading-tight tracking-[-0.03em] text-stone-950 sm:text-4xl;
+  }
+
+  .eyebrow {
+    @apply font-mono text-3xl font-semibold uppercase tracking-[0.18em] text-[#9f5d45] sm:text-4xl;
+  }
+
+  .icon-link {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-stone-900/10 bg-white/55 text-stone-800 shadow-sm backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-stone-900/20 hover:bg-white hover:text-stone-950 hover:shadow-md;
+  }
+
+  .button-primary,
+  .button-secondary,
+  .button-ghost {
+    @apply inline-flex min-h-[2.75rem] items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition;
+  }
+
+  .button-primary {
+    @apply bg-stone-950 text-white shadow-[0_16px_30px_rgba(38,32,26,0.18)] hover:-translate-y-0.5 hover:bg-stone-800;
+  }
+
+  .button-secondary {
+    @apply border border-stone-900/15 bg-white/70 text-stone-900 hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .button-ghost {
+    @apply text-stone-700 hover:text-stone-950;
+  }
+
+  .metric-card {
+    @apply rounded-2xl border border-stone-900/10 bg-white/55 p-4 shadow-sm backdrop-blur;
+  }
+
+  .metric-card strong {
+    @apply block text-2xl font-semibold tracking-[-0.03em] text-stone-950;
+  }
+
+  .metric-card span {
+    @apply mt-1 block text-sm leading-5 text-stone-600;
+  }
+
+  .terminal-hero {
+    @apply flex min-h-screen items-center px-3 pb-10 pt-20 sm:px-6 sm:pt-24 lg:px-8;
+  }
+
+  .terminal-panel {
+    @apply relative overflow-hidden rounded-[1.35rem] border border-stone-900/15 bg-[#26221f] shadow-[0_30px_80px_rgba(45,35,25,0.28)];
+  }
+
+  .terminal-panel::before {
+    content: "";
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.025) 0,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px,
+      transparent 5px
+    );
+    @apply pointer-events-none absolute inset-0 opacity-60;
+  }
+
+  .terminal-panel-large {
+    @apply mx-auto min-h-[calc(100vh-7.5rem)] w-full max-w-7xl shadow-[0_36px_120px_rgba(45,35,25,0.34)];
+  }
+
+  .terminal-chrome {
+    @apply relative z-10 flex items-center gap-2 border-b border-white/10 bg-[#322d28] px-4 py-3;
+  }
+
+  .terminal-chrome span {
+    @apply h-3 w-3 rounded-full;
+  }
+
+  .terminal-chrome p {
+    @apply ml-2 font-mono text-xs text-stone-300;
+  }
+
+  .terminal-body {
+    @apply relative z-10 p-5 sm:p-7;
+  }
+
+  .terminal-body-large {
+    @apply flex min-h-[calc(100vh-10.5rem)] flex-col justify-between gap-5 p-4 sm:p-7 lg:p-10;
+  }
+
+  .terminal-welcome {
+    font-size: clamp(0.95rem, 1.55vw, 1.3rem);
+    @apply font-mono font-semibold tracking-[-0.01em] text-stone-100;
+  }
+
+  .terminal-divider {
+    font-size: clamp(0.68rem, 1.25vw, 0.95rem);
+    @apply overflow-hidden whitespace-pre-wrap break-all font-mono leading-none text-[#b96f52]/75;
+  }
+
+  .terminal-ascii {
+    font-size: clamp(0.48rem, 1.25vw, 1rem);
+    line-height: 1.18;
+    @apply max-w-full overflow-hidden whitespace-pre-wrap break-words font-mono text-[#e7dfd1];
+    text-shadow: 0 0 28px rgba(231, 184, 95, 0.12);
+  }
+
+  .terminal-command-list {
+    @apply grid gap-4 font-mono;
+  }
+
+  .terminal-command {
+    @apply grid gap-1;
+  }
+
+  .terminal-command code {
+    font-size: clamp(0.78rem, 1.25vw, 1rem);
+    @apply whitespace-pre-wrap break-words leading-6 text-stone-200;
+  }
+
+  .terminal-command .terminal-prompt {
+    @apply font-semibold text-[#d88a62];
+  }
+
+  .terminal-cursor {
+    @apply ml-1 inline-block h-4 w-2 translate-y-0.5 bg-[#d88a62];
+    animation: terminalBlink 1.05s steps(2, start) infinite;
+  }
+
+  .terminal-title {
+    @apply mb-5 flex items-center justify-between gap-3;
+  }
+
+  .terminal-title span {
+    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.16em] text-stone-300;
+  }
+
+  .terminal-title div {
+    @apply flex items-center gap-2 text-stone-300;
+  }
+
+  .terminal-title a {
+    @apply rounded-full p-2 transition hover:bg-white/10 hover:text-white;
+  }
+
+  .terminal-body pre {
+    @apply font-mono;
+  }
+
+  .editorial-card,
+  .stack-card,
+  .project-card,
+  .education-card,
+  .contact-panel {
+    @apply border border-stone-900/10 bg-white/60 shadow-[0_18px_48px_rgba(55,45,35,0.08)] backdrop-blur;
+  }
+
+  .editorial-card {
+    @apply rounded-3xl p-6 text-lg leading-8 text-stone-700 sm:p-8;
+  }
+
+  .editorial-card p + p {
+    @apply mt-5;
+  }
+
+  .stack-card {
+    @apply rounded-2xl p-5 transition hover:-translate-y-1 hover:bg-white/80;
+  }
+
+  .stack-card h3 {
+    @apply text-base font-semibold text-stone-950;
+  }
+
+  .stack-card ul {
+    @apply mt-4 flex flex-wrap gap-2;
+  }
+
+  .stack-card li,
+  .project-card li {
+    @apply rounded-full border border-stone-900/10 bg-[#fbf7f0] px-3 py-1 text-sm text-stone-700;
+  }
+
+  .project-card {
+    @apply flex min-h-[25rem] flex-col justify-between rounded-3xl p-6 transition hover:-translate-y-1 hover:bg-white/75 sm:p-7;
+  }
+
+  .project-card h3 {
+    @apply mt-3 text-2xl font-semibold tracking-[-0.02em] text-stone-950;
+  }
+
+  .project-card p {
+    @apply mt-3 leading-7 text-stone-700;
+  }
+
+  .project-card ul {
+    @apply mt-6 flex flex-wrap gap-2;
+  }
+
+  .project-outcome {
+    @apply mt-0 font-mono text-xs font-semibold uppercase tracking-[0.14em] text-[#9f5d45];
+  }
+
+  .project-links {
+    @apply mt-7 flex flex-wrap gap-3;
+  }
+
+  .project-links a,
+  .contact-actions > a:not(.button-primary) {
+    @apply inline-flex items-center gap-2 rounded-full border border-stone-900/10 bg-white/65 px-4 py-2 text-sm font-semibold text-stone-800 transition hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .timeline {
+    @apply rounded-3xl border border-stone-900/10 bg-white/45;
+  }
+
+  .timeline-item {
+    @apply grid gap-4 border-b border-stone-900/10 p-5 last:border-b-0 sm:grid-cols-[12rem_1fr] sm:p-6;
+  }
+
+  .timeline-item > div:first-child p {
+    @apply font-mono text-sm font-semibold text-[#9f5d45];
+  }
+
+  .timeline-item > div:first-child span {
+    @apply mt-1 block text-sm text-stone-500;
+  }
+
+  .timeline-item h3 {
+    @apply text-xl font-semibold text-stone-950;
+  }
+
+  .timeline-item .role {
+    @apply mt-1 text-sm font-medium text-stone-600;
+  }
+
+  .timeline-item ul {
+    @apply mt-4 space-y-2 text-sm leading-6 text-stone-700;
+  }
+
+  .timeline-item li {
+    @apply pl-4;
+  }
+
+  .timeline-item li::before {
+    content: ">";
+    @apply -ml-4 mr-2 font-mono text-[#9f5d45];
+  }
+
+  .education-card {
+    @apply h-fit rounded-3xl p-6;
+  }
+
+  .education-card p:not(.eyebrow) {
+    @apply mt-4 text-base leading-7 text-stone-700;
+  }
+
+  .contact-panel {
+    @apply grid gap-8 rounded-[2rem] p-6 sm:p-8 lg:grid-cols-[1fr_0.45fr] lg:p-10;
+  }
+
+  .contact-panel h2 {
+    @apply mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.03em] text-stone-950 sm:text-4xl;
+  }
+
+  .contact-panel p:not(.eyebrow) {
+    @apply mt-4 max-w-2xl text-lg leading-8 text-stone-700;
+  }
+
+  .contact-actions {
+    @apply flex flex-col items-start justify-center gap-3;
+  }
+}

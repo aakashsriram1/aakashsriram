@@ -1,55 +1,33 @@
-"use client"; // this is a client component
-import React from "react";
-import { useTheme } from "next-themes";
-import { RiMoonFill, RiSunLine } from "react-icons/ri";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+"use client";
+
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 export default function Navbar() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
-
   return (
-    <header className="w-full mx-auto px-4 sm:px-20 fixed top-0 z-50 shadow bg-white dark:bg-stone-900 dark:border-b dark:border-stone-600">
-      <div className="flex justify-end items-center space-x-4 py-3">
-
-
-        {/* LinkedIn Button */}
+    <header className="fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6 lg:px-8">
+      <nav
+        className="mx-auto flex max-w-7xl justify-end gap-2"
+        aria-label="Social navigation"
+      >
         <a
-          href="https://www.linkedin.com/in/aakashsriram" 
+          href="https://github.com/aakashsriram1"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-slate-100 p-2 rounded-xl"
+          className="icon-link"
+          aria-label="GitHub profile"
         >
-          <FaLinkedin size={25} color="black" />
+          <BsGithub aria-hidden="true" />
         </a>
-
-        {/* GitHub Button */}
         <a
-          href="https://github.com/aakashsriram1" 
+          href="https://www.linkedin.com/in/aakashsriram"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-slate-100 p-2 rounded-xl"
+          className="icon-link"
+          aria-label="LinkedIn profile"
         >
-          <FaGithub size={25} color="black" />
+          <BsLinkedin aria-hidden="true" />
         </a>
-  {/* Light/Dark Mode Button */}
-{currentTheme === "dark" ? (
-  <button
-    onClick={() => setTheme("light")}
-    className="bg-gray-800 text-white p-2 rounded-xl hover:bg-gray-700 transition"
-  >
-    <RiSunLine size={25} />
-  </button>
-) : (
-  <button
-    onClick={() => setTheme("dark")}
-    className="bg-gray-200 text-black p-2 rounded-xl hover:bg-gray-300 transition"
-  >
-    <RiMoonFill size={25} />
-  </button>
-)}
-
-      </div>
+      </nav>
     </header>
   );
 }

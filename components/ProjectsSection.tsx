@@ -1,100 +1,152 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
-import { BsGithub, BsArrowUpRightSquare } from "react-icons/bs";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 const projects = [
   {
-    name: "Naive Bayes Classifier",
+    name: "AgentGiG",
+    outcome: "$1,000 ByteDance sponsorship; 63% cost savings across 50 agents.",
     description:
-      "Developed a Naive Bayes Classifier from scratch to predict NBA game outcomes (win or loss) based on team statistics, using Python for data preprocessing, probability calculations, and model evaluation without relying on libraries like scikit-learn.",
-    technologies: ["Python", "Pandas", "NumPy"],
-    github: "https://github.com/aakashsriram1/NaiveBayesClassifier/",
+      "Broker layer for agent work that routes tasks through MCP tool discovery, dynamic pricing, parallel bidding, and SLA-backed execution.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "NestJS",
+      "Postgres",
+      "Redis",
+      "MCP",
+      "Claude SDK",
+    ],
+    portfolio: "https://spoon-hackathon.vercel.app/",
   },
   {
-    name: "OrderBook Engine",
+    name: "Naive Bayes Classifier",
+    outcome: "From-scratch Gaussian Naive Bayes model for basketball predictions.",
     description:
-      "Built an Orderbook Trading System in C++ from scratch to facilitate market simulations. Enhanced functionality to accurately manage order types (limit and market), track status, and execute orders.",
-    technologies: ["C++"],
+      "Implemented a classifier to predict basketball game outcomes from recent team statistics, with custom preprocessing, probability calculations, and model evaluation.",
+    technologies: ["Python", "Pandas", "NumPy", "Machine learning"],
+    github: "https://github.com/aakashsriram1/NaiveBayesClassifier",
+  },
+  {
+    name: "OrderBook",
+    outcome: "C++ market simulation with price-time priority matching.",
+    description:
+      "Built a limit order book engine that manages buy and sell orders, tracks order state, and simulates matching behavior for trading workflows.",
+    technologies: ["C++", "Market systems", "Order matching", "Simulation"],
     github: "https://github.com/aakashsriram1/OrderBook",
   },
   {
-    name: "NBA Arbitrage",
+    name: "PRATE",
+    outcome: "Published beta app with 100 users and 100+ daily image inferences.",
     description:
-      "Developed a Python-based arbitrage betting application for NBA games by analyzing player-proposition odds from multiple sportsbooks.",
-    technologies: ["Python", "Pandas", "Selenium", "Excel"],
-    github: "https://github.com/aakashsriram1/NBAPlayerProparbitrage",
+      "Mobile physique analytics product with image upload, FastAPI inference, PyTorch vision models, and real-time WebSocket feedback.",
+    technologies: ["React Native", "FastAPI", "PyTorch", "Postgres", "WebSockets"],
+    
+  },
+  {
+    name: "LockIn",
+    outcome: "90%+ completion verification accuracy across habit workflows.",
+    description:
+      "Accountability app that verifies image-based habit completion with CLIP embeddings, Weaviate search, streaks, challenges, and alerts.",
+    technologies: ["Python", "React", "Node.js", "MongoDB", "Weaviate", "CLIP"],
+    github: "https://github.com/aakashsriram1/sbHacks",
   },
   {
     name: "LiveDrive",
+    outcome: "Modeled NFL play calls from a 1.5M+ row tracking dataset.",
     description:
-      "A machine learning application that predicts whether an NFL play will be a run or pass based on live image tracking from a dataset of 1.5M+ entries. This project placed in the Data Science Project Initiative.",
-    technologies: [
-      "Machine Learning (Gradient Descent, Convolutional Neural Networks)",
-      "Pandas, Scikit-learn, NumPy, OpenCV, PyTorch, TensorFlow",
-      "Python, R",
-    ],
+      "Machine learning project predicting run/pass decisions from live tracking data using classical ML and computer vision workflows.",
+    technologies: ["Python", "R", "OpenCV", "PyTorch", "TensorFlow"],
     github: "https://github.com/aakashsriram1/LiveDrive",
     link: "/livedrive.png",
+  },
+  {
+    name: "Pet Tracker",
+    outcome: "In progress: mobile-first pet health tracking system.",
+    description:
+      "Building a pet care app for medications, vaccinations, symptoms, diet, weight trends, reminders, and non-diagnostic AI health pattern flags.",
+    technologies: ["Dart", "Flutter", "Mobile", "AI health flags"],
+    github: "https://github.com/aakashsriram1/pet-tracker",
+  },
+  {
+    name: "Basis",
+    outcome: "In progress: crypto arbitrage research platform.",
+    description:
+      "Exploring cross-exchange price differences, mean reversion, and transaction-cost-adjusted profitability across live crypto venues.",
+    technologies: ["Market data", "Crypto", "Arbitrage", "Research systems"],
+    github: "https://github.com/aakashsriram1/Basis",
+  },
+  {
+    name: "Redix",
+    outcome: "In progress: Redis-compatible storage engine in C++.",
+    description:
+      "Implementing an in-memory data store from scratch with Redis-style commands, data structures, and systems-level performance concerns.",
+    technologies: ["C++17", "Systems", "In-memory storage", "Redis protocol"],
+    github: "https://github.com/aakashsriram1/cpp-redix",
   },
 ];
 
 const ProjectsSection = () => {
   return (
-    <section id="projects">
-      <h1 className="my-10 text-center font-bold text-4xl">
-        Projects
-        <hr className="w-6 h-1 mx-auto my-4 bg-yellow-900 border-0 rounded" />
-      </h1>
+    <section id="projects" className="section-shell">
+      <div className="section-heading">
+        <p className="eyebrow">Featured projects</p>
+      </div>
 
-      {/* Grid layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg"
-          >
-            {/* Project Name */}
-            <h1 className="text-2xl font-bold">{project.name}</h1>
-
-            {/* Project Description */}
-            <p className="text-lg leading-7 mt-2 text-neutral-600 dark:text-neutral-400">
-              {project.description}
-            </p>
-
-            {/* Technologies */}
-            <div className="mt-4">
-              <h2 className="font-semibold text-xl mb-2">
-                Technologies / Languages Used:
-              </h2>
-              <ul className="list-disc ml-6 text-neutral-600 dark:text-neutral-400">
-                {project.technologies.map((tech, techIdx) => (
-                  <li key={techIdx}>{tech}</li>
-                ))}
-              </ul>
+      <div className="grid gap-5 md:grid-cols-2">
+        {projects.map((project) => (
+          <article className="project-card" key={project.name}>
+            <div>
+              <p className="project-outcome">{project.outcome}</p>
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
             </div>
 
-            {/* Links */}
-            <div className="flex flex-row align-bottom space-x-4 mt-4">
+            <ul aria-label={`${project.name} technology stack`}>
+              {project.technologies.map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
+
+            <div className="project-links">
+              {project.portfolio && (
+                <Link
+                  href={project.portfolio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.name} portfolio website`}
+                >
+                  <BsArrowUpRight aria-hidden="true" />
+                  Sample Website
+                </Link>
+              )}
+
               {project.github && (
-                <Link href={project.github} target="_blank">
-                  <BsGithub
-                    size={30}
-                    className="hover:-translate-y-1 transition-transform cursor-pointer"
-                  />
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.name} GitHub repository`}
+                >
+                  <BsGithub aria-hidden="true" />
+                  Code
                 </Link>
               )}
-              {project.link && idx === 3 && ( // Only for LiveDrive
-                <Link href={project.link} target="_blank">
-                  <BsArrowUpRightSquare
-                    size={30}
-                    className="hover:-translate-y-1 transition-transform cursor-pointer"
-                  />
+
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${project.name} project preview`}
+                >
+                  <BsArrowUpRight aria-hidden="true" />
+                  Preview
                 </Link>
               )}
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>
